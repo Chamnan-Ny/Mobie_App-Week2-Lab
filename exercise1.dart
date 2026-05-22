@@ -1,7 +1,7 @@
 
-enum Skill { FLUTTER, DART, OTHER }
+enum Skill{ FLUTTER, DART, OTHER }
 
-class Address {
+class Address{
   final String street;
   final String city;
   final String zipCode;

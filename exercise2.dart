@@ -40,7 +40,7 @@ class BankAccount {
 }
 class Bank {
   final String bankName;
-  final List<BankAccount> _accounts = []; // list រក្សាទុក accounts ទាំងអស់
+  final List<BankAccount> _accounts = []; 
 
   Bank({required this.bankName});
 
@@ -78,28 +78,14 @@ class Bank {
 void main() {
   final myBank = Bank(bankName: 'ABA Bank Cambodia');
 
-  // បង្កើត accounts
   final acc1 = myBank.createAccount(1001, 'John');
   final acc2 = myBank.createAccount(1002, 'Steven');
 
-  acc1.credit(500.0); // Kirito deposits $500
-  acc2.credit(1000.0); // Asuna deposits $1000
+  acc1.credit(500.0);
+  acc2.credit(1000.0); 
 
-  acc1.withdraw(200.0); // Kirito withdraws $200
+  acc1.withdraw(200.0); 
 
   myBank.showAllAccounts();
 
-  print('\n--- Testing duplicate ID ---');
-  try {
-    myBank.createAccount(1001, 'Sinon'); 
-  } catch (e) {
-    print('Error caught: $e');
-  }
-
-  print('\n--- Testing insufficient funds ---');
-  try {
-    acc1.withdraw(99999.0); 
-  } catch (e) {
-    print('Error caught: $e');
-  }
 }
